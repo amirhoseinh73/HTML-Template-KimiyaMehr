@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <title>مرکز مشاوره لورم ایپسوم</title>
+
+    <!-- global stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/lib/bootstrap.min.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/lib/swiper-bundle.min.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="./assets/font/fontawesome/css/all.min.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/lib/sweetalert2.min.css?v=1.0.0" />
+
+    <!-- private stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/page/login.css?v=1.0.0" />
+
+    <!-- global stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/global/responsive.css?v=1.0.0" />
+    
+</head>
+<body class="index index-php">
+    
+    <!-- start nav menu -->
+
+    <nav class="nav-absolute row align-items-center">
+        <div class="col col-sm ms-sm-auto nav-list-parent">
+            <!-- <button type="button" class="btn text-color-7">
+                <i class="fad fa-search"></i>
+            </button> -->
+            <ul class="nav-list-ul">
+                <li class="btn-toggle-navbar">
+                    <button type="button" class="btn text-color-1 nav-btn-collapse">
+                        <i class="fad fa-bars"></i>
+                    </button>
+                </li>
+                <li>
+                    <a href="index.html">صفحه اصلی</a>
+                </li>
+                <li>
+                    <a href="blog-category.html">وبلاگ</a>
+                </li>
+                <li>
+                    <a href="about-us.html">درباره ما</a>
+                </li>
+                <li>
+                    <a href="contact-us.html">تماس با ما</a>
+                </li>
+                <li class="btn-outline-6 me-auto">
+                    <a href="login.html">ورود</a>
+                </li>
+                <li class="btn-color-6">
+                    <a href="register.html">ثبت نام</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-auto col-sm-auto me-sm-auto logo-parent-nav">
+            <a href="index.html">
+                <img src="./assets/image/logo.png" class="img-fluid logo" alt="logo"/>
+            </a>
+        </div>
+    </nav>
+
+    <!-- end nav menu -->
+
+    <!-- start slide show -->
+
+    <header class="header">
+        <div class="image-back">
+            <img src="./assets/image/login.jpg" class="w-100 h-100 object-fit-cover" alt="" />
+        </div>
+        <div class="header-description">
+            <h1 class="title">ثبت نام</h1>
+            <p class="description">
+                برای استفاده از خدمات رزرو نوبت و پیگیری سوالات، وارد حساب خود شوید.
+            </p>
+        </div>
+    </header>
+
+    <!-- end slide show -->
+
+    <!-- start main contents -->
+
+    <main class="main container">
+        <article>
+            <form id="verify_form" class="row" method="post" autocomplete="on" action="dashboard.html">
+                
+                <section class="col-12 mb-4">
+                    <label class="col-form-label">کد تایید</label>
+                    <input id="verify_code" type="text" inputmode="numeric" data-type="number" class="form-control dir-ltr" placeholder="******"/>
+                </section>
+
+                <section class="col-12 col-sm-6 mb-4">
+                    <label class="col-form-label">رمز عبور</label>
+                    <input id="password" type="text" class="form-control input-password" placeholder="حداقل 6 کاراکتر وارد کنید."/>
+                </section>
+                <section class="col-12 col-sm-6 mb-4">
+                    <label class="col-form-label">تکرار رمز عبور</label>
+                    <input id="confirm_password" type="text" class="form-control input-password" placeholder="رمز عبور خود را مجددا وارد نمایید."/>
+                </section>
+
+                <section class="col-12 mb-5">
+                    <button type="submit" class="btn-login btn-click-color-1">تایید</button>
+                </section>
+            </form>
+        </article>
+    </main>
+
+    <!-- start footer -->
+
+    <footer class="footer container-fluid">
+        <div class="d-flex flex-column">
+            <section class="row top">
+                <div class="col-12 col-sm-5 col-md-5">
+                    <div class="row footer-large-button">
+                        <section class="col-6 col-sm-6" onclick="window.location.href=''">
+                            <i class="fad fa-phone-volume"></i>
+                            <p>مشاوره تلفنی</p>
+                        </section>
+                        <section class="col-6 col-sm-6" onclick="window.location.href=''">
+                            <i class="fad fa-user-group"></i>
+                            <p>مشاوره حضوری</p>
+                        </section>
+                        <section class="col-6 col-sm-6" onclick="window.location.href=''">
+                            <i class="fad fa-earth"></i>
+                            <p>مشاوره آنلاین</p>
+                        </section>
+                        <section class="col-6 col-sm-6" onclick="window.location.href=''">
+                            <i class="fad fa-file-invoice"></i>
+                            <p>آزمون آنلاین</p>
+                        </section>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-7 col-md-5 footer-list">
+                    <h4 class="title">دسترسی سریع</h4>
+                    <ul class="ul-list">
+                        <li>
+                            <a href="index.html">
+                                صفحه اصلی
+                            </a>
+                        </li>
+                        <li>
+                            <a href="gallery.html">
+                                گالری تصاویر
+                            </a>
+                        </li>
+                        <li>
+                            <a href="faq.html">
+                                سوالات متداول
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about-us.html">
+                                درباره ما
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact-us.html">
+                                تماس با ما
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-auto col-sm-auto col-md-2 text-start">
+                    <a href="#">
+                        <img src="./assets/image/enamad-1.png" class="img-fluid e-nemad"/>
+                    </a>
+                </div>
+                <div class="col col-sm text-start mt-auto">
+                    <ul class="ul-social">
+                        <li>
+                            <a href="#" class="fab fa-twitter"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="fab fa-facebook-f"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="fab fa-whatsapp"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="fab fa-telegram"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="fab fa-pinterest"></a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="row bottom">
+                <div class="col-12 col-sm-8 text-center text-sm-end">
+                    <i class="far fa-copyright"></i>
+                    تمامی حقوق برای وبسایت لورم ایپسوم می باشد.
+                </div>
+                <div class="col-12 col-sm-4 text-center text-sm-start dir-ltr">
+                    1399 - 1401
+                </div>
+            </section>
+        </div>
+    </footer>
+
+    <!-- end footer -->
+
+    <!-- scripts -->
+    <script type="text/javascript" src="./assets/js/lib/bootstrap.bundle.min.js?v=1.0.0"></script>
+    <script type="text/javascript" src="./assets/js/lib/swiper-bundle.min.js?v=1.0.0"></script>
+    <script type="text/javascript" src="./assets/js/lib/sweetalert2.min.js?v=1.0.0"></script>
+    <script type="text/javascript" src="./assets/js/global/config.js?v=1.0.0"></script>
+    <script type="text/javascript" src="./assets/js/global/helper.js?v=1.0.0"></script>
+    <script type="text/javascript" src="./assets/js/global/Alert.js?v=1.0.0"></script>
+</body>
+</html>
