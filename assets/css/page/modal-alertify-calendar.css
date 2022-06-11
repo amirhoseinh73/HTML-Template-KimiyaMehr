@@ -1,0 +1,561 @@
+.cs-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 300ms linear, transform 300ms linear;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+
+.cs-modal.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+
+.cs-modal-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -100;
+    background-color: transparent;
+    transition: all 300ms linear;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+}
+
+.cs-modal-back.active {
+    z-index: 18;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.cs-modal-inside {
+	position: relative;
+	background-color: var(--color-6-75);
+	top: 0;
+	left: 0;
+	padding: 0;
+	overflow: hidden;
+	width: 65rem;
+	height: 32rem;
+	border-radius: 20px;
+	max-height: 90%;
+    max-width: 90%;
+	border: 1px solid var(--dark-5);
+}
+
+.cs-modal-header {
+	background-color: var(--color-2);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 4px 8px;
+	color: var(--dark-1);
+	position: relative;
+	width: 100%;
+	direction: rtl;
+}
+
+.cs-modal-header > p {
+    margin-bottom: 0;
+    margin-left: auto;
+}
+
+.cs-modal-header > .cs-close-modal {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 1.2rem;
+    transition: all 150ms linear;
+    -webkit-transition: all 150ms linear;
+    -moz-transition: all 150ms linear;
+    -ms-transition: all 150ms linear;
+    -o-transition: all 150ms linear;
+}
+
+.cs-modal-header > .cs-close-modal:hover {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+.cs-modal-body {
+    padding: 1rem 1.5rem;
+    text-align: center;
+}
+
+.cs-modal-body {
+	height: calc( 100% - 2.5rem );
+}
+
+.cs-modal-body > div {
+	height: 100%;
+	overflow: auto;
+}
+
+.cs-modal-body .profile-image {
+	width: 12rem;
+	height: 12rem;
+	overflow: hidden;
+	display: block;
+	margin: 2rem;
+	border-color: var(--color-2);
+}
+
+.cs-modal-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    padding: 5px 10px 10px;
+}
+
+@supports (backdrop-filter: blur(8px)) {
+    .alertify .ajs-dialog,
+    .cs-modal-inside,
+    .mds-bs-persian-datetime-picker-popover {
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+    }
+}
+
+@-moz-document url-prefix() {
+    .alertify .ajs-dialog::after,
+    .mds-bs-persian-datetime-picker-popover::after,
+    .cs-modal-inside::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 0;
+        height: 100%;
+        border-radius: inherit;
+        z-index: -1;
+        background-image: -moz-radial-gradient(99% 93%, circle cover, var(--color-5-75) 0, var(--color-5-50) 56%);
+    }
+
+    .alertify .ajs-dialog::before {
+        content: '';
+        background-color: #00000091;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(100px);
+        z-index: -2;
+    }
+}
+
+/**alertify**/
+.alertify {
+    position: relative;
+    z-index: 100000;
+}
+
+.alertify .ajs-dialog {
+    width: 25rem;
+    min-height: 16rem;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: var(--color-5-50);
+    border: 1px solid var(--color-1);
+    max-width: unset;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.alertify .ajs-commands {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    margin: initial;
+}
+
+.alertify.ajs-movable:not(.ajs-maximized) .ajs-header {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-1-75);
+    font-size: 0;
+    height: 3rem;
+    position: relative;
+}
+
+.alertify.alertify-info.ajs-movable:not(.ajs-maximized) .ajs-header {
+    background-color: var(--color-1);
+}
+
+.alertify.ajs-movable:not(.ajs-maximized) .ajs-header::before {
+    content: '\f05a';
+    font-size: 2rem;
+    color: var(--color-1);
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 300;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.alertify.ajs-closable .ajs-commands button.ajs-close {
+    width: 1.7rem;
+    height: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 150ms linear;
+    background-color: transparent;
+    color: var(--color-3);
+    font-size: 1.4rem;
+    background-image: none;
+    margin: 0;
+    position: absolute;
+    left: 4px;
+    top: -4px;
+    bottom: initial;
+    right: initial;
+    text-shadow: var(--shadow-outset-small);
+    box-shadow: var(--shadow-inset-small);
+    border-radius: 50%;
+    padding: 0.875rem;
+    border: 2px solid var(--white);
+}
+
+.alertify.alertify-info.ajs-closable .ajs-commands button.ajs-close {
+    color: var(--color-1);
+}
+
+.alertify.ajs-closable .ajs-commands button.ajs-close::before {
+    content: "\f00d";
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 900;
+}
+
+.alertify.ajs-closable .ajs-commands button.ajs-close:hover {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+.alertify .ajs-body .ajs-content {
+    text-align: center;
+    padding: 3.5rem 1rem 1rem 1rem;
+    position: relative;
+}
+
+.alertify .ajs-body .ajs-content::before {
+    content: 'اطلاعیه!';
+    color: var(--color-5);
+    font-size: 2rem;
+    position: absolute;
+    display: block;
+    text-align: center;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 500;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.alertify .ajs-footer {
+    background-color: transparent;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    border-radius: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.alertify .ajs-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**end alertify**/
+
+/*calendar*/
+.mds-bs-dtp-container {
+	min-width: unset !important;
+    max-width: 100% !important;
+}
+
+.mds-bs-persian-datetime-picker-popover {
+    font-family: iranyekan, Tahoma, sans-serif !important;
+    border: 0;
+    border-radius: 18px;
+    background-color: var(--color-5-50);
+    width: 14rem;
+    padding: 12px;
+}
+
+.mds-bs-persian-datetime-picker-popover.bs-popover-bottom .arrow::after,
+.mds-bs-persian-datetime-picker-popover.bs-popover-bottom .arrow::before {
+    border-bottom-color: var(--color-5-75) !important;
+}
+
+.mds-bs-persian-datetime-picker-popover.bs-popover-top .arrow::before,
+.mds-bs-persian-datetime-picker-popover.bs-popover-top .arrow::after {
+    border-top-color: var(--color-5-75) !important;
+}
+
+.mds-bs-persian-datetime-picker-popover.bs-popover-top .arrow {
+    bottom: calc((0.5rem + 0px) * -1);
+}
+
+.mds-bs-persian-datetime-picker-popover.bs-popover-bottom .arrow {
+    top: calc((0.5rem + 1px) * -1);
+}
+
+.mds-bs-persian-datetime-picker-popover .table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: transparent;
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container .dropdown-menu {
+    background-color: var(--color-5-75);
+    border-radius: 15px;
+    border-color: var(--dark-5);
+    width: 100%;
+    padding: 0;
+    overflow: auto;
+    height: 10rem;
+    scrollbar-width: none;
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container .dropdown-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.mds-bs-persian-datetime-picker-popover .dropdown-toggle::after {
+    display: none;
+}
+
+.mds-bs-persian-datetime-picker-popover .table th,
+.mds-bs-persian-datetime-picker-popover .table td {
+    border: 0;
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table td {
+    border-radius: 50%;
+    height: 1.7rem;
+    font-size: 0.8rem;
+    vertical-align: middle !important;
+    color: var(--color-5-50);
+}
+
+.mds-bs-persian-datetime-picker-popover table .btn-light {
+    background-color: var(--color-1);
+    border: 0;
+    border-radius: 18px;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.94rem;
+    opacity: 1;
+    box-shadow: none;
+}
+
+#mdsBootstrapPersianDatetimePickerMonthSelectorButon {
+    background-color: transparent !important;
+    color: var(--color-1);
+    cursor: pointer !important;
+}
+
+.mds-bs-persian-datetime-picker-popover table .btn-light {
+    box-shadow: var(--shadow-outset-small);
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container .btn[disabled] {
+    opacity: 1;
+    cursor: not-allowed;
+    background-color: transparent;
+    color: var(--color-2-50);
+    font-weight: 500;
+    font-size: 0.94rem;
+}
+
+.mds-bs-persian-datetime-picker-popover .btn-light:not(:disabled):not(.disabled):active,
+.mds-bs-persian-datetime-picker-popover .btn-light:not(:disabled):not(.disabled).active,
+.mds-bs-persian-datetime-picker-popover .show > .btn-light.dropdown-toggle {
+    box-shadow: var(--shadow-inset-small);
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container .dropdown-divider {
+    margin-top: 1px;
+}
+
+.mds-bs-persian-datetime-picker-popover .popover-header {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: var(--color-1);
+    background-color: transparent;
+    border: 0;
+    border-radius: 18px 18px 0 0;
+    -webkit-border-radius: 18px 18px 0 0;
+    -moz-border-radius: 18px 18px 0 0;
+    -ms-border-radius: 18px 18px 0 0;
+    -o-border-radius: 18px 18px 0 0;
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table table tbody.days td[data-day][data-today] {
+    background-color: transparent;
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table table tbody.days td[data-day]:not([data-special-date]):hover,
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table table tbody.days td[data-nm]:hover,
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table table tbody.days td[data-pm]:hover {
+    box-shadow: var(--shadow-inset-small);
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table table tbody.days td[data-day][data-selectedday] {
+    background-color: var(--color-1);
+    box-shadow: var(--shadow-outset-small);
+}
+
+.mds-bs-persian-datetime-picker-popover table table table th {
+    width: 6rem !important;
+}
+
+.mds-bs-persian-datetime-picker-popover table table table th button {
+    cursor: default !important;
+}
+
+.mds-bs-persian-datetime-picker-popover table table table th:first-of-type,
+.mds-bs-persian-datetime-picker-popover table table table th:last-of-type {
+    display: none;
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container {
+    width: 100%;
+    min-width: unset;
+}
+
+.mds-bs-persian-datetime-picker-popover .text-danger {
+    color: var(--color-3) !important;
+}
+
+.mds-bs-persian-datetime-picker-container table table input[type="text"] {
+	background-color: transparent;
+	box-shadow: var(--shadow-inset-small);
+	border-radius: 50%;
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table tfoot > tr:first-child table tbody > tr > td:nth-last-child(1),
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table tfoot > tr:first-child table tbody > tr > td:nth-last-child(2) {
+    display: none;
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table tfoot > tr:first-child table tbody > tr > td:nth-child(1),
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table tfoot > tr:first-child table tbody > tr > td:nth-child(2),
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table tfoot > tr:first-child table tbody > tr > td:nth-child(3) {
+    position: relative;
+    padding: 2rem 0 0.5rem 0;
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table tfoot > tr:first-child table tbody > tr > td:nth-child(1)::before,
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table tfoot > tr:first-child table tbody > tr > td:nth-child(3)::before {
+	content: "ساعت";
+	position: absolute;
+	top: 0.5rem;
+	left: 0;
+	display: block;
+	text-align: center;
+	margin: auto;
+	right: 0;
+	color: var(--color-1-75);
+}
+
+.mds-bs-persian-datetime-picker-popover .mds-bs-persian-datetime-picker-container table tfoot > tr:first-child table tbody > tr > td:nth-child(3)::before {
+    content: "دقیقه";
+}
+
+/*clock time */
+.mdtp__time_holder {
+    direction: ltr;
+}
+
+.mdtp__time_holder {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 40px;
+}
+
+.mdtp__clock_holder {
+    position: relative;
+    z-index: 6;
+}
+
+.mdtp__button {
+	font-family: iranyekan, Tahoma, sans-serif;
+}
+
+/* .mdtimepicker {
+	font-family: iranyekan, Tahoma, sans-serif;
+} */
+
+.mdtp__wrapper[data-theme="blue"] .mdtp__button {
+    color: var(--white);
+  }
+
+.clock-timepicker {
+    position: absolute !important;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    padding: 4px 16px;
+    text-align: left;
+    font-size: 0.9rem;
+    margin: 0;
+    display: flex !important;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mdtp__wrapper {
+    flex-direction: column-reverse;
+}
+
+.mdtp__buttons {
+    position: absolute;
+    z-index: 99;
+    color: black;
+    bottom: -115px;
+}
