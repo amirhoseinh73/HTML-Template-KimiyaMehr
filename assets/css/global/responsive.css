@@ -352,7 +352,7 @@
         display: none;
     }
 
-    .blog.single-blog-php > .main > .row {
+    .blog.single-blog > .main > .row {
         margin-left: 0;
         margin-right: 0;
     }
