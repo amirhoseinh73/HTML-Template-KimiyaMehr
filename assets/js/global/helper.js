@@ -8,6 +8,18 @@ function doc_ready(fn) {
     }
 }
 
+function alert_html_ltr( type = "danger", message = "", id = "" ) {
+    return `<div id="${id}" class="alert alert-${type} dir-ltr text-start transition-alert">
+    ${message}
+    </div>`;
+}
+
+function alert_html_rtl( type = "danger", message = "", id = "" ) {
+    return `<div id="${id}" class="alert alert-${type} dir-rtl text-end transition-alert">
+    ${message}
+    </div>`;
+}
+
 function sweet_alert_confirm( data, callback = () => {} ) {
     Swal.fire({
         title: data.title,
