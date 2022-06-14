@@ -67,6 +67,13 @@ function toggleNavbar() {
         const parent = document.createElement( "div" );
         const close_btn = document.createElement( "button" );
 
+        let logo = document.querySelector( ".nav-header .logo" );
+        if ( ! logo ) logo = document.querySelector( ".nav-absolute .logo" );
+        if ( logo ) logo = logo.closest( "a" ).cloneNode( true );
+        const logo_parent = document.createElement( "div" );
+        logo_parent.classList.add( "nav-header" );
+        logo_parent.insertAdjacentElement( "afterbegin", logo );
+
         close_btn.type = "button";
         close_btn.innerHTML = "&times;"
         close_btn.classList.add( "nav-mobile-close-btn" );
@@ -75,6 +82,7 @@ function toggleNavbar() {
 
         parent.classList.add( "nav-mobile" );
         parent.insertAdjacentElement( "afterbegin", close_btn );
+        parent.insertAdjacentElement( "beforeend", logo_parent );
         parent.insertAdjacentElement( "beforeend", nav_list );
         parent.querySelector( ".btn-toggle-navbar" ).remove();
 
