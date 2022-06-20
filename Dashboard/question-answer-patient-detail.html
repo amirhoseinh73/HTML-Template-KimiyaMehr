@@ -11,9 +11,6 @@
     <link rel="stylesheet" type="text/css" href="../assets/font/fontawesome/css/all.min.css?v=1.0.0" />
     <link rel="stylesheet" type="text/css" href="../assets/css/lib/sweetalert2.min.css?v=1.0.0" />
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/lib/mds.bs.datetimepicker.style.css?v=1.0.0" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/lib/mdtimepicker.css?v=1.0.0" />
-
     <link rel="stylesheet" type="text/css" href="../assets/css/page/modal-alertify-calendar.css?v=1.0.0" />
     <link rel="stylesheet" type="text/css" href="../assets/css/page/dashboard.css?v=1.0.0" />
 
@@ -272,13 +269,13 @@
                                                     </div>
                                                     <div class="col-2 ms-3">
                                                         <div class="answer-radio">
-                                                            <input id="QA_publish_type_private" name="QA_publish_type" type="radio" <?php if ( ! $QA->show ) echo "checked" ?>/>
+                                                            <input id="QA_publish_type_private" name="QA_publish_type" type="radio" checked/>
                                                             <label for="QA_publish_type_private">خصوصی</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-2">
                                                         <div class="answer-radio">
-                                                            <input id="QA_publish_type_public" name="QA_publish_type" type="radio" <?php if ( $QA->show ) echo "checked" ?>/>
+                                                            <input id="QA_publish_type_public" name="QA_publish_type" type="radio"/>
                                                             <label for="QA_publish_type_public">عمومی</label>
                                                         </div>
                                                     </div>
