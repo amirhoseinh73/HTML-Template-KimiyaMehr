@@ -252,6 +252,11 @@
 .appointment-card.small {
 	width: calc(25% - 0.4rem);
 	height: 9rem;
+	margin-right: 0.4rem;
+}
+
+.appointment-card.small:nth-of-type( 4n + 1 ) {
+	margin-right: 0;
 }
 
 .link-absolute {

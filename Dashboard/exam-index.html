@@ -169,7 +169,7 @@
                             <span>نوبت های قبلی</span>
                         </a>
                     </li>
-                    <li class='active'>
+                    <li>
                         <a href="question-answer-doctor-index.html">
                             <i class="far fa-question-circle"></i>
                             <span>پرسش و پاسخ</span>
@@ -187,7 +187,7 @@
                             <span>نوبت های گرفته شده</span>
                         </a>
                     </li>
-                    <li>
+                    <li class='active'>
                         <a href="exam-index.html">
                             <i class="far fa-file-signature"></i>
                             <span>آزمون های آنلاین</span>
@@ -210,151 +210,126 @@
             <!-- end dashboard menu (right side) -->
 
             <!-- start contents of dashboard (left side) -->
+            
             <article class="col align-content-center px-0 h-100">
                 <div class="dashboard-main-container">
                     <div class="col-12 h-100">
-                        <section class="dashboard-inside-container scroll height-scroll-less">
-                            <div class="accordion accordion-flush accordion-active-color-2" id="faq_accordion">
-                                <section class="accordion-item">
-                                    <h2 class="accordion-header" id="faq_q_1">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" 
-                                        data-bs-target="#faq_a_1" aria-expanded="false" aria-controls="faq_a_1">
-                                            <p class="mb-0 d-block w-100 text-center">پرسش های جدید</p>
-                                        </button>
-                                    </h2>
-                                    <div id="faq_a_1" class="accordion-collapse collapse show" aria-labelledby="faq_q_1" 
-                                        data-bs-parent="#faq_accordion">
-                                        <div class="accordion-body">
-                                            <table id="table_QA_doctor_not_answered" class="table table-responsive table-secondary table-striped table-bordered table-hover mb-0 font-size-0-8 table-pointer">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">ردیف</th>
-                                                        <th scope="col">تاریخ ایجاد</th>
-                                                        <th scope="col">سوال</th>
-                                                        <th scope="col">نام کاربر</th>
-                                                        <th scope="col">نمایش</th>
-                                                        <th scope="col">آخرین به روز رسانی</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr onclick="window.location.href='./question-answer-doctor-detail.html'">
-                                                        <td>1</td>
-                                                        <td>1400-10-25</td>
-                                                        <td>لورم ایپسوم متن؟</td>
-                                                        <td>امیرحسین حسنی</td>
-                                                        <td>
-                                                            <span class="text-danger">خصوصی</span>
-                                                        </td>
-                                                        <td>1400-10-25</td>
-                                                    </tr>
-                                                    <tr onclick="window.location.href='./question-answer-patient-index.html'">
-                                                        <td>2</td>
-                                                        <td>1400-10-25</td>
-                                                        <td>لورم ایپسوم متن؟</td>
-                                                        <td>امیرحسین حسنی</td>
-                                                        <td>
-                                                            <span class="text-danger">خصوصی</span>
-                                                        </td>
-                                                        <td>1400-10-25</td>
-                                                    </tr>
-                                                    <tr onclick="window.location.href='./question-answer-patient-create.html'">
-                                                        <td>3</td>
-                                                        <td>1400-10-25</td>
-                                                        <td>لورم ایپسوم متن؟</td>
-                                                        <td>امیرحسین حسنی</td>
-                                                        <td>
-                                                            <span class="text-primary">عمومی</span>
-                                                        </td>
-                                                        <td>1400-10-25</td>
-                                                    </tr>
-                                                    <tr onclick="window.location.href='./question-answer-patient-detail.html'">
-                                                        <td>4</td>
-                                                        <td>1400-10-25</td>
-                                                        <td>لورم ایپسوم متن؟</td>
-                                                        <td>امیرحسین حسنی</td>
-                                                        <td>
-                                                            <span class="text-primary">عمومی</span>
-                                                        </td>
-                                                        <td>1400-10-25</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </section>
-            
-                                <section class="accordion-item">
-                                    <h2 class="accordion-header" id="faq_q_2">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                                        data-bs-target="#faq_a_2" aria-expanded="false" aria-controls="faq_a_2">
-                                            <p class="mb-0 d-block w-100 text-center">پرسش های قبلی</p>
-                                        </button>
-                                    </h2>
-                                    <div id="faq_a_2" class="accordion-collapse collapse" aria-labelledby="faq_q_2" 
-                                    data-bs-parent="#faq_accordion">
-                                        <div class="accordion-body">
-                                            <table id="table_QA_doctor_already_answered" class="table table-responsive table-secondary table-striped table-bordered table-hover mb-0 font-size-0-8 table-pointer">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">ردیف</th>
-                                                        <th scope="col">تاریخ ایجاد</th>
-                                                        <th scope="col">سوال</th>
-                                                        <th scope="col">نام کاربر</th>
-                                                        <th scope="col">نمایش</th>
-                                                        <th scope="col">آخرین به روز رسانی</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr onclick="window.location.href='./question-answer-doctor-detail.html'">
-                                                        <td>1</td>
-                                                        <td>1400-10-25</td>
-                                                        <td>لورم ایپسوم متن؟</td>
-                                                        <td>امیرحسین حسنی</td>
-                                                        <td>
-                                                            <span class="text-danger">خصوصی</span>
-                                                        </td>
-                                                        <td>1400-10-25</td>
-                                                    </tr>
-                                                    <tr onclick="window.location.href='./question-answer-patient-index.html'">
-                                                        <td>2</td>
-                                                        <td>1400-10-25</td>
-                                                        <td>لورم ایپسوم متن؟</td>
-                                                        <td>امیرحسین حسنی</td>
-                                                        <td>
-                                                            <span class="text-danger">خصوصی</span>
-                                                        </td>
-                                                        <td>1400-10-25</td>
-                                                    </tr>
-                                                    <tr onclick="window.location.href='./question-answer-patient-create.html'">
-                                                        <td>3</td>
-                                                        <td>1400-10-25</td>
-                                                        <td>لورم ایپسوم متن؟</td>
-                                                        <td>امیرحسین حسنی</td>
-                                                        <td>
-                                                            <span class="text-primary">عمومی</span>
-                                                        </td>
-                                                        <td>1400-10-25</td>
-                                                    </tr>
-                                                    <tr onclick="window.location.href='./question-answer-patient-detail.html'">
-                                                        <td>4</td>
-                                                        <td>1400-10-25</td>
-                                                        <td>لورم ایپسوم متن؟</td>
-                                                        <td>امیرحسین حسنی</td>
-                                                        <td>
-                                                            <span class="text-primary">عمومی</span>
-                                                        </td>
-                                                        <td>1400-10-25</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
+                        <section id="exam_cards_parent" class="dashboard-inside-container scroll inside-container-center mt-1">
+                            <section class="appointment-card small">
+                                <a href="exam-page.html" class="link-absolute"></a>
+                                <img src="../uploads/exam/exam-1.jpg"/>
+                                <div>
+                                    <h5 class="card-title">آرمون شخصیت شناسی</h5>
+                                    <p class="card-description-2">
+                                        <span>تعداد سوالات</span>
+                                        <abbr>25</abbr>
+                                    </p>
+                                    <p class="card-description-2">
+                                        لورم ایپسوم متن ساختگی
+                                    </p>
+                                    <!--<p class="card-description-2">
+                                        <span>زمان</span>
+                                        <abbr>
+                                        ${ exam.time }
+                                        دقیقه
+                                        </abbr>
+                                    </p>-->
+                                    <p class="card-description-3 text-color-3">برای شروع آزمون کلیک کنید.</p>
+                                </div>
+                            </section>
+                            <section class="appointment-card small">
+                                <a href="exam-page.html" class="link-absolute"></a>
+                                <img src="../uploads/exam/exam-1.jpg"/>
+                                <div>
+                                    <h5 class="card-title">آرمون شخصیت شناسی</h5>
+                                    <p class="card-description-2">
+                                        <span>تعداد سوالات</span>
+                                        <abbr>25</abbr>
+                                    </p>
+                                    <p class="card-description-2">
+                                        لورم ایپسوم متن ساختگی
+                                    </p>
+                                    <!--<p class="card-description-2">
+                                        <span>زمان</span>
+                                        <abbr>
+                                        ${ exam.time }
+                                        دقیقه
+                                        </abbr>
+                                    </p>-->
+                                    <p class="card-description-3 text-color-3">برای شروع آزمون کلیک کنید.</p>
+                                </div>
+                            </section>
+                            <section class="appointment-card small">
+                                <a href="exam-page.html" class="link-absolute"></a>
+                                <img src="../uploads/exam/exam-1.jpg"/>
+                                <div>
+                                    <h5 class="card-title">آرمون شخصیت شناسی</h5>
+                                    <p class="card-description-2">
+                                        <span>تعداد سوالات</span>
+                                        <abbr>25</abbr>
+                                    </p>
+                                    <p class="card-description-2">
+                                        لورم ایپسوم متن ساختگی
+                                    </p>
+                                    <!--<p class="card-description-2">
+                                        <span>زمان</span>
+                                        <abbr>
+                                        ${ exam.time }
+                                        دقیقه
+                                        </abbr>
+                                    </p>-->
+                                    <p class="card-description-3 text-color-3">برای شروع آزمون کلیک کنید.</p>
+                                </div>
+                            </section>
+                            <section class="appointment-card small">
+                                <a href="exam-page.html" class="link-absolute"></a>
+                                <img src="../uploads/exam/exam-1.jpg"/>
+                                <div>
+                                    <h5 class="card-title">آرمون شخصیت شناسی</h5>
+                                    <p class="card-description-2">
+                                        <span>تعداد سوالات</span>
+                                        <abbr>25</abbr>
+                                    </p>
+                                    <p class="card-description-2">
+                                        لورم ایپسوم متن ساختگی
+                                    </p>
+                                    <!--<p class="card-description-2">
+                                        <span>زمان</span>
+                                        <abbr>
+                                        ${ exam.time }
+                                        دقیقه
+                                        </abbr>
+                                    </p>-->
+                                    <p class="card-description-3 text-color-3">برای شروع آزمون کلیک کنید.</p>
+                                </div>
+                            </section>
+                            <section class="appointment-card small">
+                                <a href="exam-page.html" class="link-absolute"></a>
+                                <img src="../uploads/exam/exam-1.jpg"/>
+                                <div>
+                                    <h5 class="card-title">آرمون شخصیت شناسی</h5>
+                                    <p class="card-description-2">
+                                        <span>تعداد سوالات</span>
+                                        <abbr>25</abbr>
+                                    </p>
+                                    <p class="card-description-2">
+                                        لورم ایپسوم متن ساختگی
+                                    </p>
+                                    <!--<p class="card-description-2">
+                                        <span>زمان</span>
+                                        <abbr>
+                                        ${ exam.time }
+                                        دقیقه
+                                        </abbr>
+                                    </p>-->
+                                    <p class="card-description-3 text-color-3">برای شروع آزمون کلیک کنید.</p>
+                                </div>
+                            </section>
                         </section>
                     </div>
                 </div>
             </article>
+            
             <!-- end contents of dashboard (left side) -->
         </div>
     </main>
